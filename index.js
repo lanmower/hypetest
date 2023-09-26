@@ -35,7 +35,7 @@ const init = (kp)=>{
     const serverKey = node.getSub(kp, process.env.SERVERNAME);
     const callKey = node.getSub(kp, process.env.IPCNAME);
   
-    node.lbserve(runCall, serverKey,process.env.IPCNAME, webhook);
+    node.lbserve(callKey, serverKey,process.env.IPCNAME, runCall);
     goodbye(node.destroy)
     return node;
 }
