@@ -30,11 +30,7 @@ const runCall = async (index, calls, input = {}, pk, ipcCall, refresh) => {
     }
     return calls
   };
-const init = (kp)=>{
-    const node = ipc();
-    const serverKey = node.getSub(kp, process.env.SERVERNAME);
-    const callKey = node.getSub(kp, process.env.IPCNAME);
-  
+const init = (kp, node=ipc(), serverKey=node.getSub(kp, process.env.SERVERNAME), callKey=node.getSub(kp, process.env.IPCNAME))=>{
     node.lbserve(callKey, serverKey,process.env.IPCNAME, runCall);
     goodbye(node.destroy)
     return node;
