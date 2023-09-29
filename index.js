@@ -1,6 +1,5 @@
 
 const ipc = require('hyper-ipc-secure');
-const goodbye = require('graceful-goodbye');
 require('dotenv').config();
 
 import ev from './eval.js'
@@ -32,7 +31,6 @@ const runCall = async (index, calls, input = {}, pk, ipcCall, refresh) => {
   };
 const init = (kp, node=ipc(), serverKey=node.getSub(kp, process.env.SERVERNAME), callKey=node.getSub(kp, process.env.IPCNAME))=>{
     node.lbserve(callKey, serverKey,process.env.IPCNAME, runCall);
-    goodbye(node.destroy)
     return node;
 }
 export default init;
