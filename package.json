@@ -14,6 +14,7 @@
     "dotenv": "^16.0.1",
     "quickjs-emscripten": "^0.23.0",
     "hyper-ipc-secure": "^1.4.23",
-    "hypercore-crypto": "^3.4.0"
+    "hypercore-crypto": "^3.4.0",
+    "hypelib":"^0.0.0"
   }
 }
