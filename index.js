@@ -4,8 +4,8 @@ require('dotenv').config();
 
 import ev from './eval.js'
 const testy = inp => {
-    console.log({ inp });
-    const outp = { ...inp, hello: 'world' };
+    console.log("INPUT", inp);
+    const outp = { ...inp };
     console.log("OUTPUT", outp);
     return outp;
 }
